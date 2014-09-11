@@ -1,9 +1,7 @@
-var sum = 0;
+var fs = require('fs');
 
-for (var i = 2; i < process.argv.length; i++) {
+buf = fs.readFileSync(process.argv[2]);
 
-  sum += Number(process.argv[i]);
-
-}
-
-console.log(sum);
+var str = buf.toString().split("\n").length;
+// Remove extra \n from end of last line
+console.log(str-1);
